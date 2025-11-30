@@ -15,11 +15,14 @@ namespace Lab5
         //class-level random object
         Random rand = new Random();
 
+        //class-level name variable
+        const string MYNAME = "Elijah Renault";
+
         private void Form1_Load(object sender, EventArgs e)
         {
-            //select one roll radiobutton
+            radOneRoll.Checked = true; //select one roll radiobutton
 
-            //add your name to end of form title
+            this.Text += MYNAME; //add your name to end of form title
 
         } // end form load
 
@@ -46,11 +49,6 @@ namespace Lab5
             //display name in label
 
         }
-
-        /* Name: ClearOneRoll
-        *  Sent: nothing
-        *  Return: nothing
-        *  Clear the labels */
 
 
         /* Name: ClearStats
@@ -116,6 +114,23 @@ namespace Lab5
             // Format average always showing 2 decimal places 
 
         } // end Generate click
+
+        private void radOneRoll_CheckedChanged(object sender, EventArgs e)
+        {
+            grpMarkStats.Hide(); //this will hide the Mark Stats groupbox.
+            ClearOneRoll();//this clears the One Roll groupbox of all values.
+        }
+
+        /* Method Name: ClearOneRoll
+        *  Sent: nothing
+        *  Returns: nothing
+        *  Clears the labels within the One Roll groupbox. */
+        private void ClearOneRoll()
+        {
+            lblDice1.Text = ""; //clears the label for the first dice.
+            lblDice2.Text = ""; //clears the label for the second dice.
+            lblRollName.Text = ""; //clears the Roll Name label.
+        }
 
         /* Name: CalcStats
         * Sent: array and 2 integers
