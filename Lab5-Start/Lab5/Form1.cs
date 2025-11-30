@@ -9,7 +9,7 @@ namespace Lab5
         /* Name: Elijah Renault
          * Date: November 29th, 2025
          * This program rolls one dice or calculates mark stats.
-         * Link to your repo in GitHub: 
+         * Link to your repo in GitHub: https://github.com/ElijahRenault/Lab-5-RandoMethods
          * */
 
         //class-level random object
