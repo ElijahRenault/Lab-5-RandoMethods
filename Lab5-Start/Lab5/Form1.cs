@@ -6,8 +6,8 @@ namespace Lab5
         {
             InitializeComponent();
         }
-        /* Name:
-         * Date: November 2025
+        /* Name: Elijah Renault
+         * Date: November 29th, 2025
          * This program rolls one dice or calculates mark stats.
          * Link to your repo in GitHub: 
          * */
