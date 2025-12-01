@@ -28,28 +28,14 @@ namespace Lab5
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            //call the function
+            ClearOneRoll(); //this clears the One Roll groupbox of all values.
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            //call the function
+            ClearStats(); //this clears the Mark Stats groupbox of all values.
 
         }
-
-        private void btnRollDice_Click(object sender, EventArgs e)
-        {
-            int dice1, dice2;
-            //call ftn RollDice, placing returned number into integers
-
-            //place integers into labels
-
-            // call ftn GetName sending total and returning name
-
-            //display name in label
-
-        }
-
 
         /* Name: ClearStats
         *  Sent: nothing
@@ -57,16 +43,41 @@ namespace Lab5
         *  Reset nud to minimum value, chkbox unselected, 
         *  clear labels and listbox */
 
+        private void ClearStats()
+        {
+            nudNumber.Value = nudNumber.Minimum; //this resets the nud value to the minimum
+            chkSeed.Checked = false; //this unchecks the checkbox for a seed value
+            lstMarks.Items.Clear(); //this clears out the listbox
+            lblPass.ResetText(); //this reverts the pass text to its original state, being blank
+            lblFail.ResetText(); //this reverts the fail text to its original state, being blank
+            lblAverage.ResetText(); //this reverts the average text to its original state, being blank
+        }
 
-        /* Name: RollDice
-        * Sent: nothing
-        * Return: integer (1-6)
-        * Simulates rolling one dice */
+        private void btnRollDice_Click(object sender, EventArgs e)
+        {
+            int dice1, dice2;
 
+            RollDice(); //call method for RollDice, placing returned number into integers
+
+            dice1 = RollDice(); //place value from RollDice to dice1
+            dice2 = RollDice(); //place value from RollDice to dice2
+
+            lblDice1.Text = dice1.ToString(); //place integer into Dice 1 label
+            lblDice2.Text = dice2.ToString(); //place integer into Dice 1 label
+
+            int total = dice1 + dice2; //gets the total for use in GetName
+
+            string nameOutcome = GetName(total); // call the method GetName, sending total and returning name
+
+            //(nameOutcome is just used to capture the returned value from GetName)
+
+            lblRollName.Text = nameOutcome; //display name in label
+
+        }
 
         /* Name: GetName
         * Sent: 1 integer (total of dice1 and dice2) 
-        * Return: string (name associated with total) 
+        * Returns: string (name associated with total) 
         * Finds the name of dice roll based on total.
         * Use a switch statement with one return only
         * Names: 2 = Snake Eyes
@@ -77,6 +88,35 @@ namespace Lab5
         *        11 = Yo-leven
         *        12 = Boxcars
         * Anything else = No special name*/
+
+        private string GetName(int total)
+        {
+            string name;
+            switch (total)
+            {
+                case 2: name = "Snake Eyes"; break;
+                case 3: name = "Little Joe"; break;
+                case 5: name = "Fever"; break;
+                case 7: name = "Most Common"; break;
+                case 9: name = "Center Field"; break;
+                case 11: name = "Yo-leven"; break;
+                case 12: name = "Boxcars"; break;
+                default: name = "No special name"; break;
+            }
+
+            return name;
+        }
+
+        /* Name: RollDice
+        * Sent: nothing
+        * Returns: integer (1-6)
+        * Simulates rolling one dice */
+
+        private int RollDice()
+        {
+            Random rand = new Random(); //creates our new random
+            return rand.Next(1, 7); //this goes from a range of 1 - 6, since it's always n - 1 in these
+        }
 
         private void btnSwapNumbers_Click(object sender, EventArgs e)
         {
@@ -91,13 +131,13 @@ namespace Lab5
 
         /* Name: DataPresent
         * Sent: string
-        * Return: bool (true if data, false if not) 
+        * Returns: bool (true if data, false if not) 
         * See if string is empty or not*/
 
 
         /* Name: SwapData
         * Sent: 2 strings
-        * Return: none 
+        * Returns: none 
         * Swaps the memory locations of two strings*/
 
         private void btnGenerate_Click(object sender, EventArgs e)
