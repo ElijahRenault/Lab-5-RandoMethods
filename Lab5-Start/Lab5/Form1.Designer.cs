@@ -118,7 +118,7 @@
             btnSwapNumbers.Location = new Point(136, 174);
             btnSwapNumbers.Margin = new Padding(4, 3, 4, 3);
             btnSwapNumbers.Name = "btnSwapNumbers";
-            btnSwapNumbers.Size = new Size(118, 72);
+            btnSwapNumbers.Size = new Size(127, 72);
             btnSwapNumbers.TabIndex = 8;
             btnSwapNumbers.Text = "&Swap Numbers";
             btnSwapNumbers.UseVisualStyleBackColor = true;
@@ -158,17 +158,17 @@
             grpOneRoll.Controls.Add(label7);
             grpOneRoll.Location = new Point(11, 88);
             grpOneRoll.Name = "grpOneRoll";
-            grpOneRoll.Size = new Size(390, 255);
+            grpOneRoll.Size = new Size(425, 255);
             grpOneRoll.TabIndex = 9;
             grpOneRoll.TabStop = false;
             grpOneRoll.Text = "One Roll";
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(265, 174);
+            btnClear.Location = new Point(271, 174);
             btnClear.Margin = new Padding(4, 3, 4, 3);
             btnClear.Name = "btnClear";
-            btnClear.Size = new Size(118, 72);
+            btnClear.Size = new Size(143, 72);
             btnClear.TabIndex = 9;
             btnClear.Text = "&Clear \r\nOne Roll";
             btnClear.UseVisualStyleBackColor = true;
@@ -207,6 +207,7 @@
             radRollStats.TabStop = true;
             radRollStats.Text = "Mark Stats";
             radRollStats.UseVisualStyleBackColor = true;
+            radRollStats.CheckedChanged += radRollStats_CheckedChanged;
             // 
             // grpMarkStats
             // 
@@ -222,19 +223,19 @@
             grpMarkStats.Controls.Add(chkSeed);
             grpMarkStats.Controls.Add(label3);
             grpMarkStats.Controls.Add(nudNumber);
-            grpMarkStats.Location = new Point(409, 88);
+            grpMarkStats.Location = new Point(458, 88);
             grpMarkStats.Name = "grpMarkStats";
-            grpMarkStats.Size = new Size(486, 255);
+            grpMarkStats.Size = new Size(628, 255);
             grpMarkStats.TabIndex = 12;
             grpMarkStats.TabStop = false;
             grpMarkStats.Text = "Mark Stats";
             // 
             // btnReset
             // 
-            btnReset.Location = new Point(214, 174);
+            btnReset.Location = new Point(275, 174);
             btnReset.Margin = new Padding(4, 3, 4, 3);
             btnReset.Name = "btnReset";
-            btnReset.Size = new Size(118, 72);
+            btnReset.Size = new Size(153, 72);
             btnReset.TabIndex = 14;
             btnReset.Text = "&Reset \r\nStats";
             btnReset.UseVisualStyleBackColor = true;
@@ -242,10 +243,10 @@
             // 
             // btnGenerate
             // 
-            btnGenerate.Location = new Point(47, 174);
+            btnGenerate.Location = new Point(69, 172);
             btnGenerate.Margin = new Padding(4, 3, 4, 3);
             btnGenerate.Name = "btnGenerate";
-            btnGenerate.Size = new Size(118, 72);
+            btnGenerate.Size = new Size(159, 72);
             btnGenerate.TabIndex = 13;
             btnGenerate.Text = "&Generate Numbers";
             btnGenerate.UseVisualStyleBackColor = true;
@@ -255,7 +256,7 @@
             // 
             lblFail.BackColor = Color.MistyRose;
             lblFail.BorderStyle = BorderStyle.Fixed3D;
-            lblFail.Location = new Point(121, 95);
+            lblFail.Location = new Point(140, 98);
             lblFail.Margin = new Padding(4, 0, 4, 0);
             lblFail.Name = "lblFail";
             lblFail.Size = new Size(105, 34);
@@ -266,7 +267,7 @@
             // 
             lblPass.BackColor = Color.MistyRose;
             lblPass.BorderStyle = BorderStyle.Fixed3D;
-            lblPass.Location = new Point(121, 58);
+            lblPass.Location = new Point(140, 61);
             lblPass.Margin = new Padding(4, 0, 4, 0);
             lblPass.Name = "lblPass";
             lblPass.Size = new Size(105, 34);
@@ -277,7 +278,7 @@
             // 
             lblAverage.BackColor = Color.MistyRose;
             lblAverage.BorderStyle = BorderStyle.Fixed3D;
-            lblAverage.Location = new Point(121, 133);
+            lblAverage.Location = new Point(140, 136);
             lblAverage.Margin = new Padding(4, 0, 4, 0);
             lblAverage.Name = "lblAverage";
             lblAverage.Size = new Size(105, 34);
@@ -287,15 +288,15 @@
             // lstMarks
             // 
             lstMarks.FormattingEnabled = true;
-            lstMarks.Location = new Point(364, 19);
+            lstMarks.Location = new Point(468, 26);
             lstMarks.Name = "lstMarks";
-            lstMarks.Size = new Size(105, 207);
+            lstMarks.Size = new Size(145, 207);
             lstMarks.TabIndex = 6;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(14, 100);
+            label6.Location = new Point(33, 103);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
             label6.Size = new Size(68, 29);
@@ -305,7 +306,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(14, 63);
+            label5.Location = new Point(33, 66);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
             label5.Size = new Size(77, 29);
@@ -315,7 +316,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(14, 137);
+            label4.Location = new Point(33, 140);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new Size(122, 29);
@@ -325,17 +326,18 @@
             // chkSeed
             // 
             chkSeed.AutoSize = true;
-            chkSeed.Location = new Point(214, 23);
+            chkSeed.Location = new Point(252, 22);
             chkSeed.Name = "chkSeed";
             chkSeed.Size = new Size(176, 33);
             chkSeed.TabIndex = 2;
             chkSeed.Text = "Seed Value";
             chkSeed.UseVisualStyleBackColor = true;
+            chkSeed.CheckedChanged += chkSeed_CheckedChanged;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(14, 26);
+            label3.Location = new Point(30, 26);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new Size(100, 29);
@@ -345,7 +347,7 @@
             // nudNumber
             // 
             nudNumber.Increment = new decimal(new int[] { 10, 0, 0, 0 });
-            nudNumber.Location = new Point(102, 23);
+            nudNumber.Location = new Point(141, 24);
             nudNumber.Maximum = new decimal(new int[] { 300, 0, 0, 0 });
             nudNumber.Minimum = new decimal(new int[] { 50, 0, 0, 0 });
             nudNumber.Name = "nudNumber";
@@ -358,7 +360,7 @@
             // 
             AutoScaleDimensions = new SizeF(16F, 29F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(907, 356);
+            ClientSize = new Size(1098, 399);
             Controls.Add(grpMarkStats);
             Controls.Add(groupBox1);
             Controls.Add(grpOneRoll);
